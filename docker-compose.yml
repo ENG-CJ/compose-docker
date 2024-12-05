@@ -1,0 +1,12 @@
+version : "3.0.9"
+services:
+  - backend:
+      -build : ./backend
+      - port: 3400:3400
+  - frontend:
+      - build : ./frontend
+      - port: 3300:3300
+  - network: 
+       app_network:
+          - driver: "local"
+             
