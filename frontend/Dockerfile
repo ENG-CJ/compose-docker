@@ -10,4 +10,4 @@ COPY . /frontend_app
 
 EXPOSE 3300
 
-CMD ["npm","run dev"]
+CMD ["npm","start"]
