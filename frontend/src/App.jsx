@@ -3,13 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios'
-
+  const api_url = import.meta.env.VITE_API_URL;
 function App() {
+
 
    const [message, setMessage] = useState(0);
   async function GetServerMessage(){
    
-    var response = await axios.get("http://localhost:3400/api/")
+    var response = await axios.get(
+      api_url + "/api/" || "http://localhost:3400/api/"
+    );
     console.log(response.data);
     setMessage(response.data.message)
   }
